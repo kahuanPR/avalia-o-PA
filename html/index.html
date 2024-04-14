@@ -5,49 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viagens ao Paraná</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 </head>
 <body>
+  <footer>
+    <h3>Viagens ao Paraná</h3>
+    <button>Hospedangens</button>
+    <button>Voos</button>
+    <button>Atrações</button>
+  </footer>
     <footer>
-        <h3>&copy; Pesquisar hotéis em Paraná, Brasil</h3>
-        <p>Insira as datas e escolha entre mais de 2.675 hotéis para se hospedar </p>
+        <h3>Pesquisar hotéis em Paraná, Brasil</h3>
     </footer>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <div class="container-fluid">
+            <div class="navbar-options"> 
+                <a class="navbar-brand" href="#" onclick="showDestinationsCard()">Para onde você vai? </a>
+                <a class="nav-link active" aria-current="page" href="#" onclick="showDatePicker('checkin')">Checkin-Checkout</a>
+                <a class="nav-link" href="#" onclick="showSelectionOptions()">Pessoas</a>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit">pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="datepicker-container" class="datepicker-container" style="display: none;">
+        <div class="datepicker" id="checkin-datepicker"></div>
+        <div class="datepicker" id="checkout-datepicker"></div>
     </div>
+    <div class="destinations-card" id="destinations-card">
+        <div class="destination-option">
+            <input type="radio" id="maringa" name="destination" value="Maringá">
+            <label for="maringa">Maringá</label>
+        </div>
+        <div class="destination-option">
+            <input type="radio" id="londrina" name="destination" value="Londrina">
+            <label for="londrina">Londrina</label>
+        </div>
+        <div class="destination-option">
+            <input type="radio" id="curitiba" name="destination" value="Curitiba">
+            <label for="curitiba">Curitiba</label>
+        </div>
+        <div class="destination-option">
+            <input type="radio" id="ilha-mel" name="destination" value="Ilha do Mel">
+            <label for="ilha-mel">Ilha do Mel</label>
+        </div>
+        <div class="destination-option">
+            <input type="radio" id="foz-iguacu" name="destination" value="Foz do Iguaçu">
+            <label for="foz-iguacu">Foz do Iguaçu</label>
+        </div>
+    </div>
+    <div class="gallery-container">
+      <div class="image-container">
+        <img src="/imagens/360_F_336560111_rhfyACfqM4ypNf9nvgUg6jutXaCahqjP.jpg" alt="Imagem 1" style="width: 268px; height: 300px;">
+        <div class="image-caption">
+          <h4>Maringá</h4>
+          <p>Hotéis disponiveis</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="/imagens/curitiba-brazil-parks-city-wallpaper-preview.jpg" alt="Imagem 2" style="width: 268px; height: 300px;">
+        <div class="image-caption">
+          <h4>Curitiba</h4>
+          <p>Hotéis disponiveis</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="/imagens/360_F_390243566_avPbARjIPT71wdFCYmG2siTyzv8ToCSE.jpg" alt="Imagem 3" style="width: 268px; height: 300px;">
+        <div class="image-caption">
+          <h4>Ilha do Mel</h4>
+          <p>Hotéis disponiveis</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="/imagens/aniversario-da-cidade-VH-arquivo-2.webp" alt="Imagem 4" style="width: 268px; height: 300px;">
+        <div class="image-caption">
+          <h4>Londrina</h4>
+          <p>Hotéis disponiveis</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="/imagens/brazil-foz-do-iguacu-iguacu-iguassu.jpg" alt="Imagem 5" style="width: 268px; height: 300px;">
+        <div class="image-caption">
+          <h4>Foz de Iguaçu</h4>
+          <p>Hotéis disponiveis</p>
+        </div>
+      </div>
+    </div>
+    <script src="/script/script.js"></script>
+
+    <div id="datepicker-container" style="display: none;">
+      <div class="datepicker" id="checkin-datepicker"></div>
+      <div class="datepicker" id="checkout-datepicker"></div>
   </div>
-</nav>
+ 
 </body>
 </html>
