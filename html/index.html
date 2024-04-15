@@ -19,45 +19,34 @@
     <footer>
         <h3>Pesquisar hotéis em Paraná, Brasil</h3>
     </footer>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="navbar-options"> 
-                <a class="navbar-brand" href="#" onclick="showDestinationsCard()">Para onde você vai? </a>
-                <a class="nav-link active" aria-current="page" href="#" onclick="showDatePicker('checkin')">Checkin-Checkout</a>
-                <a class="nav-link" href="#" onclick="showSelectionOptions()">Pessoas</a>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-outline-success" type="submit">pesquisar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    
+<!-- Campo de navegação -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+      <div class="navbar-options">
+          <div class="destination-search"> <!-- Novo elemento para envolver a caixa de pesquisa -->
+              <a class="navbar-brand" href="#" onclick="toggleDestinationSearch()">Para onde você vai? </a>
+              <input id="destination-search-input" type="text" placeholder="Digite o destino"> <!-- Caixa de pesquisa -->
+              <div id="destination-suggestions"> <!-- Sugestões de destino -->
+                  <div class="destination-suggestion">Maringá</div>
+                  <div class="destination-suggestion">Londrina</div>
+                  <div class="destination-suggestion">Curitiba</div>
+                  <div class="destination-suggestion">Ilha do Mel</div>
+                  <div class="destination-suggestion">Foz do Iguaçu</div>
+              </div>
+          </div>
+          <a class="nav-link active" aria-current="page" href="#" onclick="toggleDatePicker()">Checkin-Checkout</a>
+          <a class="nav-link" href="#" onclick="showSelectionOptions()">Pessoas</a>
+          <form class="d-flex" role="search">
+              <button class="btn btn-outline-success" type="submit">pesquisar</button>
+          </form>
+      </div>
+  </div>
+</nav>
 
     <div id="datepicker-container" class="datepicker-container" style="display: none;">
         <div class="datepicker" id="checkin-datepicker"></div>
         <div class="datepicker" id="checkout-datepicker"></div>
-    </div>
-    <div class="destinations-card" id="destinations-card">
-        <div class="destination-option">
-            <input type="radio" id="maringa" name="destination" value="Maringá">
-            <label for="maringa">Maringá</label>
-        </div>
-        <div class="destination-option">
-            <input type="radio" id="londrina" name="destination" value="Londrina">
-            <label for="londrina">Londrina</label>
-        </div>
-        <div class="destination-option">
-            <input type="radio" id="curitiba" name="destination" value="Curitiba">
-            <label for="curitiba">Curitiba</label>
-        </div>
-        <div class="destination-option">
-            <input type="radio" id="ilha-mel" name="destination" value="Ilha do Mel">
-            <label for="ilha-mel">Ilha do Mel</label>
-        </div>
-        <div class="destination-option">
-            <input type="radio" id="foz-iguacu" name="destination" value="Foz do Iguaçu">
-            <label for="foz-iguacu">Foz do Iguaçu</label>
-        </div>
     </div>
     <div class="gallery-container">
       <div class="image-container">
@@ -97,11 +86,6 @@
       </div>
     </div>
     <script src="/script/script.js"></script>
-
-    <div id="datepicker-container" style="display: none;">
-      <div class="datepicker" id="checkin-datepicker"></div>
-      <div class="datepicker" id="checkout-datepicker"></div>
   </div>
- 
 </body>
 </html>

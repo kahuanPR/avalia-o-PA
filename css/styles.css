@@ -155,21 +155,65 @@ button {
 #datepicker-container {
     display: none; /* Inicialmente oculto */
     position: absolute;
-    top: 50px; /* Ajuste a posição conforme necessário */
+    top: 280px; /* Ajuste a posição conforme necessário */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #007bff;
+    border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Alterado para flexbox */
+    justify-content: center; /* Alinhamento horizontal no centro */
+    align-items: center; /* Alinhamento vertical no centro */
 }
 
 /* Estilo dos calendários individuais */
 .datepicker {
-    width: 220px;
+    width: 280px;
     padding: 10px;
-    margin-bottom: 10px;
+}
+/* Estilo do campo de navegação */
+.navbar-options {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid #ffc107;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 20px;
 }
 
+/* Estilo do campo de pesquisa */
+.destination-search {
+    position: relative;
+}
 
+#destination-search-input {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
+/* Estilo das sugestões de destino */
+#destination-suggestions {
+    display: none;
+    position: absolute;
+    top: calc(100% + 35px);
+    left: 0;
+    width: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+}
