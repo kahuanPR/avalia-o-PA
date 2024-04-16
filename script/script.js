@@ -136,3 +136,28 @@ function toggleDestinationSearch() {
           });
       });
       
+      function showSelectionOptions() {
+        var selectionOptions = document.getElementById('selection-options');
+        var isActive = selectionOptions.style.display === 'block';
+
+        // Mostra ou oculta as opções de seleção
+        if (isActive) {
+            selectionOptions.style.display = 'none';
+        } else {
+            selectionOptions.style.display = 'block';
+        }
+    }
+
+    // Ouvinte de evento de alteração para o campo de seleção de crianças
+    document.getElementById('children').addEventListener('change', function() {
+        var childAgeSelection = document.getElementById('child-age-selection');
+        var childAgeSelect = document.getElementById('child-age');
+
+        // Verifica se há crianças selecionadas
+        if (parseInt(this.value) > 0) {
+            childAgeSelection.style.display = 'block'; // Mostra a seleção de idade da criança
+            childAgeSelect.selectedIndex = 0; // Redefine a seleção de idade da criança para 0 anos
+        } else {
+            childAgeSelection.style.display = 'none'; // Oculta a seleção de idade da criança
+        }
+    });

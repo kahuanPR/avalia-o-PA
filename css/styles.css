@@ -60,7 +60,7 @@ footer h3 {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 16px;
+    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -156,7 +156,7 @@ button {
     display: none; /* Inicialmente oculto */
     position: absolute;
     top: 280px; /* Ajuste a posição conforme necessário */
-    left: 50%;
+    left: 790px;
     transform: translateX(-50%);
     background-color: #007bff;
     border-radius: 20px;
@@ -216,4 +216,33 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 1000;
+}
+.selection-options {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 5px solid #007bff; /* Adiciona uma borda */
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    top: 280px; /* Posiciona abaixo do link "Pessoas" */
+    left: 1250px;
+    transform: translateX(-50%);
+    width: 200px;
+}
+
+.age-selection {
+    margin-bottom: 10px;
+}
+
+.age-selection label {
+    margin-right: 10px;
+}
+
+.age-selection input,
+.age-selection select {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; 
 }
