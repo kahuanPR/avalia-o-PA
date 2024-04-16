@@ -161,3 +161,7 @@ function toggleDestinationSearch() {
             childAgeSelection.style.display = 'none'; // Oculta a seleção de idade da criança
         }
     });
+
+    function scrollDown() {
+        window.scrollBy(0, window.innerHeight); // Rolagem para baixo pelo tamanho da janela
+      }
