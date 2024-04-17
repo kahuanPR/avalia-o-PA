@@ -73,10 +73,6 @@ destinationSearch.style.display = 'block';
 suggestionBox.style.display = 'block';
 }
 }
-
-
-
-
 $(function() {
   // Variáveis para armazenar as datas de check-in e check-out
   var checkinDate = null;
@@ -153,79 +149,59 @@ document.getElementById('children').addEventListener('change', function() {
 var childAgeSelection = document.getElementById('child-age-selection');
 var childAgeSelect = document.getElementById('child-age');
 
-// Verifica se há crianças selecionadas
-if (parseInt(this.value) > 0) {
-    childAgeSelection.style.display = 'block'; // Mostra a seleção de idade da criança
-    childAgeSelect.selectedIndex = 0; // Redefine a seleção de idade da criança para 0 anos
-} else {
-    childAgeSelection.style.display = 'none'; // Oculta a seleção de idade da criança
-}
+$('#children').on('change', function() {
+    var childAgeSelection = document.getElementById('child-age-selection');
+    var childAgeSelect = document.getElementById('child-age');
+
+    if (parseInt(this.value) > 0) {
+        childAgeSelection.style.display = 'block';
+        childAgeSelect.selectedIndex = 0;
+    } else {
+        childAgeSelection.style.display = 'none';
+    }
 });
-var map = L.map('map').setView([-25.4284, -49.2733], 10); // Coordenadas para Curitiba como centro inicial e zoom 10
 
-        // Adiciona camada de mapa OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(map);
+var map = L.map('map').setView([-25.4284, -49.2733], 10);
 
-        // Função para obter dados meteorológicos do Tomorrow.io para as coordenadas especificadas
-        function getWeatherData(latitude, longitude) {
-            var apiKey = 'qMeFokO16InmQlCRDsOOxt55v9DC4C6l'; // Substitua pela sua chave de API do Tomorrow.io
-            var url = 'https://api.tomorrow.io/v4/timelines?location=' + latitude + ',' + longitude + '&fields=temperature,weatherCode,windSpeed,precipitationIntensity&units=metric&timesteps=current&apikey=' + apiKey;
-        
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erro ao obter dados meteorológicos: ' + response.status);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Verifica se os dados esperados estão presentes na resposta da API
-                    if (data && data.data && data.data.timelines && data.data.timelines.length > 0 && data.data.timelines[0].intervals && data.data.timelines[0].intervals.length > 0) {
-                        // Extrai os dados meteorológicos
-                        var weatherData = {
-                            temperature: data.data.timelines[0].intervals[0].values.temperature,
-                            weatherCode: data.data.timelines[0].intervals[0].values.weatherCode,
-                            windSpeed: data.data.timelines[0].intervals[0].values.windSpeed,
-                            precipitationIntensity: data.data.timelines[0].intervals[0].values.precipitationIntensity
-                        };
-        
-                        // Adiciona marcador ao mapa com informações meteorológicas
-                        L.marker([latitude, longitude]).addTo(map)
-                            .bindPopup('<b>Temperatura:</b> ' + weatherData.temperature + '°C<br>' +
-                                       '<b>Código do Tempo:</b> ' + weatherData.weatherCode + '<br>' +
-                                       '<b>Velocidade do Vento:</b> ' + weatherData.windSpeed + 'm/s<br>' +
-                                       '<b>Intensidade da Precipitação:</b> ' + weatherData.precipitationIntensity + 'mm/h')
-                            .openPopup();
-                    } else {
-                        console.error('Erro ao obter dados meteorológicos: Dados ausentes na resposta da API');
-                    }
-                })
-                .catch(error => console.error('Erro ao obter dados meteorológicos:', error));
-        }
-        
-        // Chama a função para obter dados meteorológicos para Curitiba
-        setTimeout(function() {
-            getWeatherData(-25.4284, -49.2733); 
-        }, 500);
-        // Adiciona marcador para Foz do Iguaçu
-        setTimeout(function() {
-            getWeatherData(-25.5163, -54.5854);
-        }, 500);
-        
-        // Adiciona marcador para Londrina
-        setTimeout(function() {
-            getWeatherData(-23.3045, -51.1696);
-        }, 500);
-        
-        // Adiciona marcador para Ilha do Mel
-        setTimeout(function() {
-            getWeatherData(-25.4905, -48.3831);
-        }, 500);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
 
-     // Adiciona marcador para Maringá
-         setTimeout(function() {
-            getWeatherData(-23.4273, -51.9375);
-        }, 500);
-                        
+function getWeatherData(latitude, longitude) {
+    var apiKey = 'qMeFokO16InmQlCRDsOOxt55v9DC4C6l';
+    var url = 'https://api.tomorrow.io/v4/timelines?location=' + latitude + ',' + longitude + '&fields=temperature,weatherCode,windSpeed,precipitationIntensity&units=metric&timesteps=current&apikey=' + apiKey;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados meteorológicos: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.data && data.data.timelines && data.data.timelines.length > 0 && data.data.timelines[0].intervals && data.data.timelines[0].intervals.length > 0) {
+                var weatherData = {
+                    temperature: data.data.timelines[0].intervals[0].values.temperature,
+                    weatherCode: data.data.timelines[0].intervals[0].values.weatherCode,
+                    windSpeed: data.data.timelines[0].intervals[0].values.windSpeed,
+                    precipitationIntensity: data.data.timelines[0].intervals[0].values.precipitationIntensity
+                };
+
+                L.marker([latitude, longitude]).addTo(map)
+                    .bindPopup('<b>Temperatura:</b> ' + weatherData.temperature + '°C<br>' +
+                               '<b>Código do Tempo:</b> ' + weatherData.weatherCode + '<br>' +
+                               '<b>Velocidade do Vento:</b> ' + weatherData.windSpeed + 'm/s<br>' +
+                               '<b>Intensidade da Precipitação:</b> ' + weatherData.precipitationIntensity + 'mm/h')
+                    .openPopup();
+            } else {
+                console.error('Erro ao obter dados meteorológicos: Dados ausentes na resposta da API');
+            }
+        })
+        .catch(error => console.error('Erro ao obter dados meteorológicos:', error));
+}
+
+getWeatherData(-25.4284, -49.2733); // Curitiba
+getWeatherData(-25.5163, -54.5854); // Foz do Iguaçu
+getWeatherData(-23.3045, -51.1696); // Londrina
+getWeatherData(-25.4905, -48.3831); // Ilha do Mel
+getWeatherData(-23.4273, -51.9375); // Maringá
