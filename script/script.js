@@ -150,7 +150,6 @@ var map = L.map('map').setView([-25.4284, -49.2733], 10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
-
 function getWeatherData(latitude, longitude) {
     var apiKey = 'qMeFokO16InmQlCRDsOOxt55v9DC4C6l';
     var url = 'https://api.tomorrow.io/v4/timelines?location=' + latitude + ',' + longitude + '&fields=temperature,weatherCode,windSpeed,precipitationIntensity&units=metric&timesteps=current&apikey=' + apiKey;
@@ -182,16 +181,97 @@ function getWeatherData(latitude, longitude) {
             }
         })
         .catch(error => console.error('Erro ao obter dados meteorológicos:', error));
-
 }
 
-// Chama a função para obter dados meteorológicos para Curitiba
-getWeatherData(-25.4284, -49.2733); 
-// Chama a função para obter dados meteorológicos para Foz do Iguaçu
-getWeatherData(-25.5163, -54.5854); 
-// Chama a função para obter dados meteorológicos para Londrina
-getWeatherData(-23.3045, -51.1696); 
-// Chama a função para obter dados meteorológicos para Ilha do Mel
-getWeatherData(-25.4905, -48.3831); 
-// Chama a função para obter dados meteorológicos para Maringá
-getWeatherData(-23.4273, -51.9375); 
+var requestLimit = 10; // Limite de solicitações
+var requestInterval = 500; // Intervalo de tempo em milissegundos (1 minuto)
+var lastRequestTime = 0;
+var requestCount = 0;
+
+function canMakeRequest() {
+    var now = Date.now();
+    if (now - lastRequestTime >= requestInterval) {
+        // Resetar o contador se o intervalo de tempo passou
+        requestCount = 0;
+        lastRequestTime = now;
+    }
+    return requestCount < requestLimit;
+}
+document.querySelectorAll('.vejaMais').forEach(button => {
+    button.addEventListener('click', function() {
+        // Obtém as informações do hotel com base no botão clicado (exemplo: nome do hotel, imagens, preço, etc.)
+        var hotelName = this.parentNode.querySelector('h2').innerText;
+        var hotelPrice = this.parentNode.querySelector('p').innerText;
+        var hotelImages = this.parentNode.querySelectorAll('img');
+
+        // Monta o conteúdo da tela modal
+        var modalContent = `
+            <div class="modal-header">
+                <h2>${hotelName}</h2>
+                <span class="close-button" onclick="closeModal()">X</span>
+            </div>
+            <div class="modal-body">
+                <button onclick="previousImage()">Anterior</button>
+                <button onclick="nextImage()">Próximo</button>
+                <!-- Loop através das imagens -->
+        `;
+        
+        hotelImages.forEach(image => {
+            modalContent += `
+                <img src="imagens dos cartoes/curitiba-brazil-parks-city-wallpaper-preview.jpg" style="display: none;">
+                <img src="${image.src}" alt="${hotelName}" style="display: none;">
+                <img src="${image.src}" alt="${hotelName}" style="display: none;">
+                <img src="${image.src}" alt="${hotelName}" style="display: none;">
+                <img src="${image.src}" alt="${hotelName}" style="display: none;">
+            `;
+        });
+
+        modalContent += `
+                <p>Preço: ${hotelPrice}</p>
+                <!-- Adicione mais informações do hotel conforme necessário -->
+            </div>
+        `;
+
+        // Exibe a tela modal com as informações do hotel
+        var modalContainer = document.getElementById('modal-container');
+        modalContainer.innerHTML = modalContent;
+        modalContainer.style.display = 'block';
+
+        // Exibe a primeira imagem ao abrir a modal
+        currentImageIndex = 0;
+        showImage(currentImageIndex);
+    });
+});
+
+// Função para exibir uma imagem específica
+function showImage(index) {
+    var images = document.querySelectorAll('.modal-container img');
+    images.forEach(function(image) {
+        image.style.display = 'none';
+    });
+    images[index].style.display = 'block';
+}
+
+// Função para exibir a imagem anterior
+function previousImage() {
+    currentImageIndex--;
+    var images = document.querySelectorAll('.modal-container img');
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
+    showImage(currentImageIndex);
+}
+
+// Função para exibir a próxima imagem
+function nextImage() {
+    currentImageIndex++;
+    var images = document.querySelectorAll('.modal-container img');
+    if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    showImage(currentImageIndex);
+}
+function closeModal() {
+    var modalContainer = document.getElementById('modal-container');
+    modalContainer.style.display = 'none';
+}

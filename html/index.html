@@ -6,6 +6,8 @@
     <title>Viagens ao Paraná</title>
 <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body>
   <footer>
@@ -123,40 +125,78 @@
     <p class="rectangle-text">Os melhores hotéis de cada região:</p>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Hotel Deville Business Maringá.jpg" alt="">
+        <h2>Hotel Deville Business Maringá</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
+
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Hotel Avalon Maringá Econômico.jpg" alt="Imagem 2">
+        <h2>Hotel Avalon Maringá Econômico</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
+
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Bourbon Curitiba Hotel & Suítes.jpg" alt="Imagem 3">
+        <h2>Bourbon Curitiba Hotel & Suítes</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Saint Emilion by Atlantica.jpg" alt="Imagem 4">
+        <h2>Saint Emilion by Atlantica</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Pousada Vila do Mel .jpg" alt="Imagem 5">
+        <h2>Pousada Vila do Mel</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Pousada Guaricana .jpg" alt="Imagem 6">
+        <h2>Pousada Guaricana</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Blue Tree Premium Londrina.jpg" alt="Imagem 7">
+        <h2>Blue Tree Premium Londrina</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/London Hotel .jpg" alt="Imagem 8">
+        <h2>London Hotel</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Gran Meliá Iguazú.jpg" alt="Imagem 9">
+        <h2>Gran Meliá Iguazú</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
     <div class="rectangle">
         <img src="/imagens dos hoteis/Hotel das Cataratas, A Belmond Hotel, Iguassu Falls .jpg" alt="Imagem 10">
+        <h2>Hotel das Cataratas, A Belmond Hotel, Iguassu Falls</h2>
+        <p>Preço: R$ XXX por noite</p>
+        <button class="vejaMais">Veja mais</button>
     </div>
+    
 </div>
 
 <div id="map-container">
     <p class="map-text">Clima das 5 regiões em tempo real:</p>
     <div id="map"></div>
   </div>
+
+<div id="modal-container" class="modal-container" style="display: none;">
+</div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script src="/script/script.js"></script>
