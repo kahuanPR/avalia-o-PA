@@ -145,14 +145,24 @@ document.getElementById('children').addEventListener('change', function() {
     }
 });
 
-var map = L.map('map').setView([-25.4284, -49.2733], 10);
+var map = L.map('map').setView([-25.4284, -49.2733], 7);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
-function getWeatherData(latitude, longitude) {
+
+var locations = [
+    { name: "Maringá", coordinates: [-23.4329, -51.9332] },
+    { name: "Londrina", coordinates: [-23.3103, -51.1628] },
+    { name: "Foz de Iguaçu", coordinates: [-25.5161, -54.5856] },
+    { name: "Curitiba", coordinates: [-25.4284, -49.2733] },
+    { name: "Ilha do Mel", coordinates: [-25.4815, -48.3429] }
+];
+
+// Função para obter os dados meteorológicos para uma localização específica
+function getWeatherData(location) {
     var apiKey = 'qMeFokO16InmQlCRDsOOxt55v9DC4C6l';
-    var url = 'https://api.tomorrow.io/v4/timelines?location=' + latitude + ',' + longitude + '&fields=temperature,weatherCode,windSpeed,precipitationIntensity&units=metric&timesteps=current&apikey=' + apiKey;
+    var url = 'https://api.tomorrow.io/v4/timelines?location=' + location.coordinates[0] + ',' + location.coordinates[1] + '&fields=temperature,weatherCode,windSpeed,precipitationIntensity&units=metric&timesteps=current&apikey=' + apiKey;
 
     fetch(url)
         .then(response => {
@@ -170,33 +180,37 @@ function getWeatherData(latitude, longitude) {
                     precipitationIntensity: data.data.timelines[0].intervals[0].values.precipitationIntensity
                 };
 
-                L.marker([latitude, longitude]).addTo(map)
-                    .bindPopup('<b>Temperatura:</b> ' + weatherData.temperature + '°C<br>' +
+                // Adicionar marcador ao mapa
+                var marker = L.marker(location.coordinates).addTo(map)
+                    .bindPopup('<b>Localização:</b> ' + location.name + '<br>' +
+                               '<b>Temperatura:</b> ' + weatherData.temperature + '°C<br>' +
                                '<b>Código do Tempo:</b> ' + weatherData.weatherCode + '<br>' +
                                '<b>Velocidade do Vento:</b> ' + weatherData.windSpeed + 'm/s<br>' +
                                '<b>Intensidade da Precipitação:</b> ' + weatherData.precipitationIntensity + 'mm/h')
                     .openPopup();
+
+                // Atualizar o mapa para incluir o novo marcador
+                map.fitBounds(marker.getBounds());
             } else {
-                console.error('Erro ao obter dados meteorológicos: Dados ausentes na resposta da API');
+                console.error('Erro ao obter dados meteorológicos para ' + location.name + ': Dados ausentes na resposta da API');
             }
         })
-        .catch(error => console.error('Erro ao obter dados meteorológicos:', error));
+        .catch(error => console.error('Erro ao obter dados meteorológicos para ' + location.name + ':', error));
 }
 
-var requestLimit = 10; // Limite de solicitações
-var requestInterval = 500; // Intervalo de tempo em milissegundos (1 minuto)
-var lastRequestTime = 0;
-var requestCount = 0;
-
-function canMakeRequest() {
-    var now = Date.now();
-    if (now - lastRequestTime >= requestInterval) {
-        // Resetar o contador se o intervalo de tempo passou
-        requestCount = 0;
-        lastRequestTime = now;
-    }
-    return requestCount < requestLimit;
+// Função para obter dados meteorológicos para todas as localizações com um intervalo de 1 minuto entre as solicitações
+function getWeatherForLocationsWithDelay(locations, delay) {
+    var currentDelay = 0;
+    locations.forEach(function(location) {
+        setTimeout(function() {
+            getWeatherData(location);
+        }, currentDelay);
+        currentDelay += delay;
+    });
 }
+
+// Chamada da função para obter dados meteorológicos para todas as localizações com um intervalo de 1 minuto entre as solicitações
+getWeatherForLocationsWithDelay(locations, 60000); // 1 minuto = 60000 milissegundos
 document.querySelectorAll('.vejaMais').forEach(button => {
     button.addEventListener('click', function() {
         // Obtém as informações do hotel com base no botão clicado (exemplo: nome do hotel, imagens, preço, etc.)
