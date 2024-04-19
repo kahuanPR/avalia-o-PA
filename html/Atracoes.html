@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrações - Booking.com</title>
+    <link rel="stylesheet" href="/css/stylesAtracoes.css"> <!-- Arquivo CSS para estilos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="container"></div>
+    <h2>Atrações</h2>
+    <p>Atrações, atividades e experiências
+        Descubra novas atrações e experiências que combinam com o que você gosta e seu jeito de viajar</p>
+        <nav class="navbar-options"> <!-- Estilo do menu de navegação -->
+            <a class="navbar-brand" href="#">Para onde você vai?</a>
+            <a id="calendar">
+            <label for="date">Selecione a data:</label>
+            <input type="date" id="date"></a>
+            <button onclick="confirmDate()">Confirmar</button>
+        </nav>
+</header>
+
+<section id="main">
+    <div class="container">
+        <h2>Atrações por Região</h2>
+        </div>
+        <!-- Maringá -->
+        <div class="attractions">
+            <h3>Maringá</h3>
+            <!-- Atração 1 -->
+            <div class="attraction">
+                <img src="maringa1.jpg" alt="Atração Maringá 1">
+                <h3>Parque do Ingá</h3>
+                <p>Parque urbano com trilhas e área verde.</p>
+                <p>Preço: R$ 10</p>
+            </div>
+            <!-- Adicione mais atrações de Maringá conforme necessário -->
+        </div>
+
+        <!-- Londrina -->
+        <div class="attractions">
+            <h3>Londrina</h3>
+            <!-- Atração 1 -->
+            <div class="attraction">
+                <img src="londrina1.jpg" alt="Atração Londrina 1">
+                <h3>Bosque Municipal Marechal Cândido Rondon</h3>
+                <p>Bosque com playground e pista de corrida.</p>
+                <p>Preço: R$ 15</p>
+            </div>
+            <!-- Adicione mais atrações de Londrina conforme necessário -->
+        </div>
+
+        <!-- Foz de Iguaçu -->
+        <div class="attractions">
+            <h3>Foz de Iguaçu</h3>
+            <!-- Atração 1 -->
+            <div class="attraction">
+                <img src="foz1.jpg" alt="Atração Foz de Iguaçu 1">
+                <h3>Cataratas do Iguaçu</h3>
+                <p>Conjunto de cataratas em meio à natureza.</p>
+                <p>Preço: R$ 30</p>
+            </div>
+            <!-- Adicione mais atrações de Foz de Iguaçu conforme necessário -->
+        </div>
+
+        <!-- Ilha do Mel -->
+        <div class="attractions">
+            <h3>Ilha do Mel</h3>
+            <!-- Atração 1 -->
+            <div class="attraction">
+                <img src="ilhamel1.jpg" alt="Atração Ilha do Mel 1">
+                <h3>Farol das Conchas</h3>
+                <p>Farol histórico com vista panorâmica.</p>
+                <p>Preço: R$ 20</p>
+            </div>
+            <!-- Adicione mais atrações da Ilha do Mel conforme necessário -->
+        </div>
+
+        <!-- Curitiba -->
+        <div class="attractions">
+            <h3>Curitiba</h3>
+            <!-- Atração 1 -->
+            <div class="attraction">
+                <img src="curitiba1.jpg" alt="Atração Curitiba 1">
+                <h3>Jardim Botânico de Curitiba</h3>
+                <p>Parque botânico com estufa de vidro.</p>
+                <p>Preço: R$ 12</p>
+            </div>
+            <!-- Adicione mais atrações de Curitiba conforme necessário -->
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Booking.com. Todos os direitos reservados.</p>
+    </div>
+</footer>
+<script src="scriptAtracoes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.js"></script>
+</body>
+</html>
