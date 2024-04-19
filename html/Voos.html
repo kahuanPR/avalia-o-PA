@@ -9,53 +9,51 @@
 <body>
     <header>
         <h1>Voos para o Paraná</h1>
+        <button>Hospedangens</button>
+        <button>Voos</button>
+        <button>Atrações</button>
+        <form class="search-form">
+            <h2>Encontre o seu voo</h2>
+            <div class="search-options-container">
+                <div class="search-options">
+                    <input type="radio" id="idaVolta" name="tipoVoo" value="idaVolta">
+                    <label for="idaVolta">Ida e Volta</label>
+                    <input type="radio" id="soIda" name="tipoVoo" value="soIda">
+                    <label for="soIda">Só Ida</label>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-options">
+                    <input type="checkbox" id="economica" name="classe" value="economica">
+                    <label for="economica">Classe Econômica</label>
+                    <label for="numAdultos">Adultos:</label>
+                    <select id="numAdultos" name="numAdultos">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="checkbox" id="voosDiretos" name="voosDiretos" value="voosDiretos">
+                    <label for="voosDiretos">Somente Voos Diretos</label>
+                </div>
+            </div>       
+        </form>
     </header>
-    <form class="search-form">
-        <h2>Encontre o seu voo</h2>
-        <div class="search-options-container">
-            <div class="search-options">
-                <input type="radio" id="idaVolta" name="tipoVoo" value="idaVolta">
-                <label for="idaVolta">Ida e Volta</label>
-                <input type="radio" id="soIda" name="tipoVoo" value="soIda">
-                <label for="soIda">Só Ida</label>
-                <input type="radio" id="multiDestinos" name="tipoVoo" value="multiDestinos">
-                <label for="multiDestinos">Multidestinos</label>
-            </div>
-        </div>
-        
-
-        <div class="search-container">
-            <div class="search-options">
-                <input type="checkbox" id="economica" name="classe" value="economica">
-                <label for="economica">Classe Econômica</label>
-                <label for="numAdultos">Adultos:</label>
-                <select id="numAdultos" name="numAdultos">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <input type="checkbox" id="voosDiretos" name="voosDiretos" value="voosDiretos">
-                <label for="voosDiretos">Somente Voos Diretos</label>
-            </div>
-        
-            <div class="search-options">
-                <label for="aeroporto">Aeroporto de Origem:</label>
-                <select id="aeroporto" name="aeroporto">
-                    <option value="MGF">MGF Aeroporto Regional de Maringá</option>
-                    <!-- Outras opções de aeroportos -->
-                </select>
-                <label for="destino">Para onde?</label>
-                <input type="text" id="destino" name="destino" placeholder="Informe o destino">
-                <label for="datas">Datas:</label>
-                <input type="date" id="datas" name="datas">
-            </div>
-        
+    <div class="navbar-options">
+        <div class="search-options">
+            <label for="aeroporto">Aeroporto de Origem:</label>
+            <select id="aeroporto" name="aeroporto">
+                <option value="MGF">MGF Aeroporto Regional de Maringá</option>
+                <!-- Outras opções de aeroportos -->
+            </select>
+            <label for="destino">Para onde?</label>
+            <input type="text" id="destino" name="destino" placeholder="Informe o destino">
+            <label for="datas">Datas:</label>
+            <input type="date" id="datas" name="datas">
             <button type="submit">Pesquisar Voos</button>
         </div>
-        
-    </form>
+    </div>
 
     <section class="flight-search">
         <h2>Voos Populares</h2>
@@ -79,7 +77,8 @@
         </div>
         <!-- Adicionar mais cartões de destino -->
     </section>
-<script src="/script/scriptVoss.js"></script>
+    
+    <script src="/script/scriptVoss.js"></script>
     <footer>
         <p>Você pode adicionar informações de contato ou outros links úteis aqui.</p>
     </footer>
