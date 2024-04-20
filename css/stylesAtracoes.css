@@ -7,24 +7,41 @@
 
 /* Estilo geral */
 body {
+<<<<<<< HEAD
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+=======
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
 
 /* Estilo do menu de navegação */
 .navbar-options {
     background-color: #f8f9fa;
+<<<<<<< HEAD
+=======
+    padding: 20px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     border: 4px solid #ffc107;
+<<<<<<< HEAD
     width: 1110px; /* Defina a largura desejada aqui */
     margin: 0 auto; 
     font-size: 25px;
+=======
+    width: 80%; /* Defina a largura desejada aqui */
+    margin: 0 auto; 
+    font-size: 20px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
 
 .navbar-brand,
@@ -33,7 +50,11 @@ body {
     text-decoration: none;
     font-weight: bold;
     position: relative;
+<<<<<<< HEAD
     padding-right: 100px;
+=======
+    padding-right: 150px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
 
 
@@ -41,14 +62,22 @@ body {
 .nav-link::after {
     content: ''; 
     position: absolute;
+<<<<<<< HEAD
     top: 20px;
     right: 00;
     transform: translateY(-50%);
     height: 79px;
+=======
+    top: 50%;
+    right: 00;
+    transform: translateY(-50%);
+    height: 80px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
     width: 5px;
     background-color: #ffc107; /* Cor da barra */
 }
 .container {
+<<<<<<< HEAD
     width: 90%;
     margin: 0 auto;
 }
@@ -126,6 +155,57 @@ header p {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+=======
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-bottom: 4px solid #ffc107;
+}
+
+header h2 {
+    margin: 0;
+    color: #343a40;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 16px;
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.attractions {
+    margin-bottom: 40px;
+}
+
+.attractions h3 {
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.attraction {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
 
 .attraction img {
@@ -134,14 +214,22 @@ header p {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .attraction h4 {
     font-size: 24px;
     color: #343a40;
     margin-bottom: 10px;
+=======
+.attraction h3 {
+    font-size: 20px;
+    color: #343a40;
+    margin-bottom: 5px;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
 
 .attraction p {
     font-size: 16px;
+<<<<<<< HEAD
     color: #3a5770;
     margin-bottom: 10px;
 }
@@ -149,6 +237,14 @@ header p {
 /* Estilo do Footer */
 footer {
     background-color: #0883ff;
+=======
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: #343a40;
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -156,6 +252,7 @@ footer {
 
 footer p {
     margin: 0;
+<<<<<<< HEAD
 }
 
 /* Estilo dos botões */
@@ -232,4 +329,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: translateY(-50%);
     font-size: 25px;
     color: #ffc107;
+=======
+>>>>>>> ef1c1bcef07698e716029ca3cfa9a37727d59604
 }
