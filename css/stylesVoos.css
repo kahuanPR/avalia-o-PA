@@ -1,243 +1,133 @@
-/* Reset de estilos */
-* {
-    box-sizing: border-box;
+/* stylesVoos.css */
+
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f7f7f7;
 }
 
-/* Estilos globais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-header {
-    background-color: #047dff;
-    color: #ffffff;
-    padding: 30px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-/* Estilo do formulário de pesquisa */
-/* Estilo do formulário de pesquisa */
-form.search-form {
-    background-color: #ffffff;
-    padding: 30px;
+header, .navbar-options, footer {
+    background: linear-gradient(135deg, #2C3E50, #3498DB);
+    color: #fff;
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-    border: 4px solid #ffc107; /* Adicionando borda amarela */
-    margin: 20px auto 0; /* Adicionando margem superior */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo do título do formulário */
-form.search-form h2 {
+header h1, footer p {
     margin: 0;
-    font-size: 32px; /* Aumentando o tamanho do título */
-    margin-bottom: 20px;
-    color: #333;
-    text-transform: uppercase; /* Transformando em maiúsculas */
 }
 
-/* Estilo das opções de pesquisa */
-.search-options-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px; /* Aumentando a margem superior */
-}
-
-/* Estilo das etiquetas das opções de pesquisa */
-form.search-form label {
-    font-size: 20px; /* Aumentando o tamanho da fonte */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Estilo dos campos de entrada e seleção */
-form.search-form input,
-form.search-form select {
-    margin-bottom: 20px; /* Aumentando o espaçamento inferior */
-    padding: 15px; /* Aumentando o preenchimento */
-    border-radius: 10px; /* Aumentando o raio da borda */
-    border: 2px solid #047dff; /* Cor da borda combinando com o fundo */
-    font-size: 18px; /* Aumentando o tamanho da fonte */
-    transition: border-color 0.3s; /* Adicionando transição para a cor da borda */
-}
-
-/* Estilo dos campos de entrada e seleção ao focar */
-form.search-form input:focus,
-form.search-form select:focus {
-    border-color: #047dff; /* Alterando a cor da borda ao focar */
-    outline: none; /* Removendo o contorno padrão ao focar */
-}
-
-/* Estilo do botão de pesquisa */
-form.search-form button {
-    background-color: #047dff;
+/* Botões */
+button {
+    padding: 12px 24px;
+    background-color: #ff5f6d;
     color: #fff;
     border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
     cursor: pointer;
-    font-size: 20px; /* Aumentando o tamanho da fonte */
-    transition: background-color 0.3s;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
-/* Estilo do botão ao passar o mouse */
-form.search-form button:hover {
-    background-color: #0356b3;
+button:hover {
+    background-color: #ff7b89;
 }
 
-/* Adicionando espaçamento entre os elementos */
-form.search-form label {
-    margin-right: 20px; /* Espaçamento entre etiquetas */
-}
-
-/* Espaçamento entre botão e outros elementos */
-form.search-form button {
-    margin-top: 20px; /* Aumentando a margem superior do botão */
-}
-
-
-
-
-section.flight-search,
-section.popular-destinations {
-    padding: 20px;
+/* Formulário de pesquisa */
+.search-form, .search-options-container {
+    padding: 30px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-section.flight-search h2,
-section.popular-destinations h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-div.flight-card,
-div.destination-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-div.flight-card h3,
-div.destination-card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #007bff;
-}
-
-div.flight-card img,
-div.destination-card img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-div.flight-card p,
-div.destination-card p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-div.flight-card button,
-div.destination-card button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-div.flight-card button:hover,
-div.destination-card button:hover {
-    background-color: #0056b3;
-}
-
-footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-}
-
-.navbar-options {
-    background-color: #ffffff; /* Cor da barra de navegação */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    align-items: center;
-    border: 4px solid #ffc107; /* Cor da borda */
-    width: 80%; /* Defina a largura desejada aqui */
-    margin: 0 auto;
-    font-size: 20px;
-    margin-bottom: 20px; /* Adiciona margem na parte inferior */
-}
-.navbar-options label:not(:last-child)::after,
-.navbar-options button:not(:last-child)::after {
-    content: ''; 
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    height: 80px;
-    width: 5px;
-    background-color: #ffc107; /* Cor da barra */
+.search-options {
+    margin-bottom: 30px;
 }
 
 .search-options label {
-    font-weight: bold; /* Texto em negrito */
-    color: #047dff; /* Cor do texto */
-    font-size: 18px; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Espaçamento inferior entre as etiquetas */
+    margin-right: 15px;
+    color: #333;
 }
 
-/* Estilizando os botões */
-button {
-    background-color: #047dff;
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Cartões de voo e destino */
+.flight-card, .destination-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.flight-card img, .destination-card img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flight-card h3, .destination-card h3 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.flight-card p, .destination-card p {
+    margin: 10px 0;
+    color: #666;
+    font-size: 16px;
+}
+
+.flight-card button, .destination-card button {
+    background-color: #ff5f6d;
     color: #fff;
-    border: 2px solid #fff; /* Adicionando borda branca */
-    padding: 15px 30px;
-    border-radius: 8px;
+    border: none;
+    padding: 12px 24px;
     cursor: pointer;
-    font-size: 18px;
-    margin: 0 10px; /* Espaçamento entre os botões */
-    transition: background-color 0.3s, transform 0.2s; /* Adicionando transições */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
-/* Estilizando os botões ao passar o mouse */
-button:hover {
-    background-color: #0356b3;
-    border-color: #0356b3; /* Mudando a cor da borda ao passar o mouse */
-    transform: scale(1.1); /* Aumentando ligeiramente o tamanho */
+.flight-card button:hover, .destination-card button:hover {
+    background-color: #ff7b89;
 }
 
-/* Adicionando margem superior para espaçamento */
-button:first-child {
-    margin-top: 20px;
+/* Estilos específicos */
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+/* Estilos para dispositivos menores */
+@media screen and (max-width: 768px) {
+    .search-options-container {
+        padding: 20px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+
+    .flight-card, .destination-card {
+        padding: 20px;
+    }
+
+    .flight-card p, .destination-card p {
+        margin: 5px 0;
+    }
 }
