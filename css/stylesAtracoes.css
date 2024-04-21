@@ -12,7 +12,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://t3.ftcdn.net/jpg/06/51/94/58/360_F_651945812_yjS3m1X6lWyyAPmrE3I35pOsZrtpPcaY.jpg');
     background-size: cover; /* Para cobrir todo o tamanho do body */
     background-repeat: no-repeat; /* Para evitar a repetição da imagem */
     background-position: center; /* Para centralizar a imagem */
