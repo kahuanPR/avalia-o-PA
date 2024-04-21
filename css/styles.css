@@ -1,4 +1,4 @@
-
+/* Corpo */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,6 +11,7 @@ footer {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    border: 1px solid #ffbf00;
 }
 
 footer h3 {
@@ -20,49 +21,28 @@ footer h3 {
 
 /* Estilo do menu de navegação */
 .navbar-options {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 4px solid #ffc107;
-    width: 80%; /* Defina a largura desejada aqui */
-    margin: 0 auto; 
+    border: 4px solid #f3f3f3;
+    width: 80%;
+    margin: 0 auto;
     font-size: 20px;
-}
-
-.navbar-brand,
-.nav-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    padding-right: 150px;
-}
-
-
-.navbar-brand::after,
-.nav-link::after {
-    content: ''; 
-    position: absolute;
-    top: 50%;
-    right: 00;
-    transform: translateY(-50%);
-    height: 80px;
-    width: 5px;
-    background-color: #ffc107; /* Cor da barra */
 }
 
 /* Estilo do campo de pesquisa */
 .btn-outline-success {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
     border: none;
-    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
+    width: 120px;
+    height: 50px;
 }
 
 .btn-outline-success:hover {
@@ -85,6 +65,7 @@ footer h3 {
 .destination-option input[type="radio"] {
     margin-right: 10px;
 }
+
 /* Estilo do contêiner de cada imagem */
 .image-container {
     width: 268px;
@@ -126,14 +107,17 @@ footer h3 {
     margin: 0;
     font-size: 14px;
 }
+
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 30px;
-    flex-direction: row; /* Alterando para exibir na horizontal */
+    flex-direction: row;
 }
+
+/* Estilo dos botões */
 button {
     margin: 1px;
     font-family: Arial, sans-serif;
@@ -147,24 +131,25 @@ button {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-
 button {
     background-color: #007bff;
     color: #fff;
 }
+
+/* Estilo dos calendários */
 #datepicker-container {
-    display: none; /* Inicialmente oculto */
+    display: none;
     position: absolute;
-    top: 280px; /* Ajuste a posição conforme necessário */
-    left: 790px;
+    top: 250px;
+    left: 60%;
     transform: translateX(-50%);
     background-color: #007bff;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* Alterado para flexbox */
-    justify-content: center; /* Alinhamento horizontal no centro */
-    align-items: center; /* Alinhamento vertical no centro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Estilo dos calendários individuais */
@@ -172,6 +157,7 @@ button {
     width: 280px;
     padding: 10px;
 }
+
 /* Estilo do campo de navegação */
 .navbar-options {
     background-color: #f8f9fa;
@@ -217,16 +203,17 @@ button {
     padding: 10px;
     z-index: 1000;
 }
+
 .selection-options {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 5px solid #007bff; /* Adiciona uma borda */
-    display: none; /* Inicialmente oculto */
+    border: 5px solid #007bff;
+    display: none;
     position: absolute;
-    top: 280px; /* Posiciona abaixo do link "Pessoas" */
-    left: 1250px;
+    top: 250px;
+    left: 80%;
     transform: translateX(-50%);
     width: 200px;
 }
@@ -246,126 +233,259 @@ button {
     border-radius: 5px;
     border: 1px solid #ced4da; 
 }
+
 .rectangle-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    justify-content: center;
     position: relative;
-    top: 50px; /* Move os retângulos para baixo */
-    left: 302px; /* Move os retângulos para a direita */
+    top: 50px;
+    left: 302px;
 }
 
 .rectangle {
-    width: 813px; 
-    height: auto; /* Permitir que a altura se ajuste conforme o conteúdo */ 
+    width: 813px;
+    height: auto;
     margin-bottom: 20px;
-    border-radius: 15px; /* Borda arredondada */
-    box-shadow: 0 4px 8px #007bff98; /* Sombra suave */
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o retângulo */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px #007bff98;
+    overflow: hidden;
 }
 
 .rectangle img {
-        width: 216px;
-        height: 200px;
-        border-radius: 10%;
-        position: relative;
-        left: 130px;
-        transform: translateX(-50%);
-        top: 15px;
-    }       
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+
 .rectangle-text {
     position: absolute;
-    top: -40px; /* Posição do texto em relação ao topo do retângulo */
-    left: 50%; /* Centraliza horizontalmente */
+    top: -40px;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #007bff;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 #map-container {
     position: relative;
     margin-top: 20px;
-    text-align: center; /* Centraliza o mapa e o texto */
+    text-align: center;
 }
 
 .map-text {
     position: absolute;
-    top: -3675px;
-    left: 485px; /* Alinha o texto ao centro */
+    top: -35px;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #007bff;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
+    font-size: 18px;
+    border: 2px solid #ffc400;
 }
 
 #map {
-    top: -3630px;
+    top: 15px;
     height: 300px;
-    width: 500px;
     border-radius: 10px;
-    border: 2px solid #007bff;
-    left: 240px;
+    border: 2px solid #ffc400;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.hover-do-site {
+    margin-top: 25px;
+    background-color: #006eff;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: 0 5px 8px black;
+    border: 2px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .rectangle h2,
-    .rectangle p,
-    .rectangle button {
-    text-align: center ;
+.hover-do-site p {
+    font-size: 25px;
+    color: white;
+}
 
-    }
+/* Estilos para a modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
 
+/* Estilos para o conteúdo da modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-.rectangle button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+/* Estilos para o título da modal */
+#region-title {
+    font-size: 28px;
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os parágrafos dos hotéis */
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Estilos para os nomes dos hotéis */
+.modal-content p strong {
+    color: #333;
+}
+
+/* Estilos para o botão Fechar */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navegação-de-icones {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 4px solid #ffc107;
+    width: 100%; /* Alteração aqui */
+    margin: 0 auto; 
+    font-size: 25px;
+}
+
+.navegação-de-icones,
+.nav-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.navegação-de-icones:hover,
+.nav-link:hover {
+    color: #000000;
+}
+
+.navegacao-de-destino {
+    color: black;
+    font-size: 20px;
+}
+
+#destination-search-input {
+    padding: 10px;
     border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 200px;
+}
+
+#destination-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    display: none;
+    border: solid #006eff;
+}
+
+.destination-suggestion {
+    padding: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.rectangle button:hover {
-    background-color: #0056b3;
-}
-.modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
-    z-index: 1000; /* Garante que a tela modal esteja acima de todos os outros elementos */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.destination-suggestion:hover {
+    background-color: #b1b9c2;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-}
-
-.modal-header h2 {
-    margin: 0;
-}
-
-.modal-body {
-    background-color: #fff;
-    padding: 20px;
+.nav-link.active {
+    font-size: 24px;
+    color: #333;
+    padding: 8px 12px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
 }
 
-.close-button {
-    cursor: pointer;
+/* Adicionando regras de mídia queries para ajustar o layout em diferentes tamanhos de tela */
+@media screen and (max-width: 768px) {
+    .navbar-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-options a {
+        margin-bottom: 10px;
+    }
+
+    .nav-link.active {
+        margin-bottom: 10px;
+    }
+
+    #destination-search-input {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .destinations-card {
+        justify-content: center;
+    }
+
+    .rectangle-container {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-options {
+        width: 100%;
+    }
+
+    .nav-link.active {
+        padding: 8px 6px;
+    }
 }

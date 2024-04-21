@@ -11,9 +11,9 @@
 <body>
     <header>
         <h1>Voos para o Paraná</h1>
-        <button>Hospedangens</button>
-        <button>Voos</button>
-        <button>Atrações</button>
+        <a href="/html/index.html"><button>Hospedagem</button></a>
+        <button>Voos</button></a>
+        <a href="/html/Atracoes.html"><button>Atrações</button></a>
         <h2>Encontre o seu voo</h2>
         <h1>Compare e reserve voos com facilidade
             Descubra seu próximo destino dos sonhos</h1>
@@ -54,7 +54,6 @@
             <input type="text" id="destino" name="destino" placeholder="Informe o destino">
             <label for="datas">Datas:</label>
             <input type="date" id="datas" name="datas">
-            <button type="submit">Pesquisar Voos</button>
         </div>
     </div>
 
@@ -99,39 +98,40 @@
         <div class="destination-card-container">
             <div class="destination-card">
                 <h3>Maringá, Brasil</h3>
-                <img src="/imagens dos cartoes/" alt="Paris">
+                <img src="/imagens dos cartoes/360_F_336560111_rhfyACfqM4ypNf9nvgUg6jutXaCahqjP.jpg" alt="Paris">
                 <p>Voos saindo do Maringa Regional Airport</p>
                 <p>24 de abr. - 1º de mai. · Ida e volta</p>
-                <button>Ver Ofertas</button>
+                <button onclick="mostrarOferta('Maringá')">Ver Ofertas</button>
             </div>
             <div class="destination-card">
                 <h3>Londrina, Brasil</h3>
-                <img src="londrina.jpg" alt="Londrina">
+                <img src="/imagens dos cartoes/aniversario-da-cidade-VH-arquivo-2.webp" alt="Londrina">
                 <p>Voos saindo do Aeroporto de Londrina</p>
                 <p>26 de abr. - 3 de mai. · Ida e volta</p>
-                <button>Ver Ofertas</button>
+                <button onclick="mostrarOferta('Londrina')">Ver Ofertas</button>
+
             </div>
             <div class="destination-card">
                 <h3>Curitiba, Brasil</h3>
-                <img src="curitiba.jpg" alt="Curitiba">
+                <img src="/imagens dos cartoes/curitiba-brazil-parks-city-wallpaper-preview.jpg" alt="Curitiba">
                 <p>Voos saindo do Aeroporto Internacional de Curitiba</p>
                 <p>25 de abr. - 2 de mai. · Ida e volta</p>
-                <button>Ver Ofertas</button>
+                <button onclick="mostrarOferta('Curitiba')">Ver Ofertas</button>
             </div>
             <div class="destination-card">
                 <h3>Ilha do Mel, Brasil</h3>
-                <img src="ilhadomel.jpg" alt="Ilha do Mel">
+                <img src="/imagens dos cartoes/360_F_390243566_avPbARjIPT71wdFCYmG2siTyzv8ToCSE.jpg" alt="Ilha do Mel">
                 <p>Voos saindo do Aeroporto de Paranaguá</p>
                 <p>28 de abr. - 5 de mai. · Ida e volta</p>
-                <button>Ver Ofertas</button>
+                <button onclick="mostrarOferta('Ilha do Mel')">Ver Ofertas</button>
             </div>
             <div class="destination-card">
                 <h3>Foz do Iguaçu, Brasil</h3>
-                <img src="fozdoiguacu.jpg" alt="Foz do Iguaçu">
+                <img src="/imagens dos cartoes/brazil-foz-do-iguacu-iguacu-iguassu.jpg" alt="Foz do Iguaçu">
                 <p>Voos saindo do Aeroporto Internacional de Foz do Iguaçu</p>
                 <p>27 de abr. - 4 de mai. · Ida e volta</p>
-                <button>Ver Ofertas</button>
-            </div>
+                <button onclick="mostrarOferta('Foz de Iguaçu')">Ver Ofertas</button>           
+             </div>
         </div>
     </section>
     <div class="overlay" id="overlay">
@@ -142,9 +142,15 @@
             <p><strong>Preço:</strong> <span id="preco"></span></p>
         </div>
     </div>
+    <div id="promoDialog" class="promo-dialog">
+        <span class="close-btn" onclick="fecharPromoDialog()">&times;</span>
+        <h2>Promoção Especial!</h2>
+        <p id="promoText"></p>
+    </div>
+    
     <script src="/script/scriptVoss.js"></script>
     <footer>
-        <p>Sobrevoe as 5 regiões do Paraná.</p>
+        <p>&copy; Sobrevoe as 5 regiões do Paraná.</p>
     </footer>
 </body>
 </html>

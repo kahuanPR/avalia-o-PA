@@ -13,9 +13,9 @@
     <div class="container">
         <h1>Atrações</h1>
     <nav class="botao-de-Paginas">
-        <button>Hospedagem</button>
-        <button>Voos</button>
-        <button>Atrações</button>
+        <a href="/html/index.html"><button>Hospedagem</button></a>
+        <a href="/html/Voos.html"><button>Voos</button></a>
+        <a href="/html/Atracoes.html"><button>Atrações</button></a>
     </nav>
         <h1>Atrações, atividades e experiências.</h1>
         <p>novas atrações e experiências que combinam com o que você gosta e seu jeito de viajar.</p>
@@ -25,7 +25,6 @@
         <div class="barra-vertical"></div>
         <label for="date">Selecione a data:</label>
         <input type="date" id="date">
-        <button onclick="confirmDate()">Confirmar</button>
     </nav>
     
 </header>
@@ -78,16 +77,23 @@
       </div>
       <div id="modal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2 id="modal-title"></h2>
-          <p id="modal-info"></p>
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-images" class="modal-images">
+                <!-- Aqui serão adicionadas as imagens dinamicamente -->
+            </div>
+            <button class="prev-img">&lt;</button>
+            <button class="next-img">&gt;</button>
+            <p id="modal-info"></p>
         </div>
-      </div>
+    </div>
+    
+    
 
 </section>
 <footer>
     <div class="hover-do-site">
-        <p>&copy; 2024 Booking.com. Todos os direitos reservados.</p>
+        <p>&copy; Melhores atrações das 5 regiões</p>
     </div>
 </footer>
 <script src="/script/scriptAtracoes.js"></script>

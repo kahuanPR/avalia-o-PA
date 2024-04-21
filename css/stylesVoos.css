@@ -1,3 +1,4 @@
+/* Estilos padrão */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,20 +6,28 @@ body {
     background-color: #ffffff;
 }
 
+/* Header */
 header {
     background-color: #027bf5;
     color: #ffffff;
     padding: 20px;
     text-align: center;
+    border: 5px solid #ffc107;
+    border-radius: 0 0px 10px 10px;
+    box-shadow: 0 5px 8px black;
 }
 
-h1 {
-    margin: 0;
-    font-size: 28px;
+header h2 {
+    font-size: 50px;
 }
 
+header h1 {
+    font-size: 30px;
+}
+
+/* Botão geral */
 button {
-    background-color: #0099ff;
+    background-color: #007bff;
     border: none;
     color: #ffffff;
     padding: 10px 20px;
@@ -36,17 +45,19 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Formulário de pesquisa */
 form.search-form {
     background-color: #ffffff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
     border: 2px solid #ffc107;
-    margin-left: 780px;
+    width: 90%; /* Alterado para largura máxima */
+    margin: 0 auto; /* Centralizar horizontalmente */
 }
 
+/* Container de opções de pesquisa */
 .search-options-container {
     display: flex;
     justify-content: space-between;
@@ -64,13 +75,14 @@ form.search-form {
     font-weight: bold;
 }
 
+/* Estilos para diferentes tipos de inputs */
 .search-options input[type="radio"],
 .search-options input[type="checkbox"],
 .search-options select {
     margin-right: 10px;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #cccccc;
+    border: 1px solid #007bff;
 }
 
 .search-options input[type="radio"]:checked + label,
@@ -78,7 +90,6 @@ form.search-form {
     font-weight: bold;
     color: #3498db;
 }
-
 
 label {
     font-weight: bold;
@@ -90,22 +101,18 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
-.search-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* Container de navegação */
 .navbar-options {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 100px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 1000px;
-    border: 2px solid #ffc107; /* Adicionando borda amarela */
-    margin-left: 25%; /* Mover para a direita */
+    border: 2px solid #ffc107;
+    width: 90%; /* Alterado para largura máxima */
+    margin: 20px auto; /* Centralizar horizontalmente */
 }
 
-
+/* Estilos para inputs específicos */
 select,
 input[type="text"],
 input[type="date"] {
@@ -116,7 +123,7 @@ input[type="date"] {
 }
 
 button[type="submit"] {
-    background-color: #1874ff;
+    background-color: #007bff;
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -124,74 +131,82 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #219a52;
-}
-
-/* Cartões de voo e destino */
-/* Estilo para os cartões de voo e destino */
-.flight-card, .destination-card {
+/* Cartões */
+.flight-card,
+.destination-card {
     background-color: #ffffff;
     border-radius: 15px;
     padding: 30px;
-    margin-right: 20px; /* Espaçamento entre os cartões */
+    margin: 20px 0; /* Espaçamento vertical */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 240px;
-    height: 190px;
-    display: inline-block; /* Exibe os cartões em linha */
-    vertical-align: top; /* Alinha-os ao topo */
-    text-align: center;
+    width: 90%; /* Alterado para largura máxima */
+    max-width: 300px; /* Limitado a uma largura máxima */
 }
 
-/* Estilo para as imagens dos cartões de voo e destino */
-.flight-card img, .destination-card img {
-    width: 45%;
+.flight-card img,
+.destination-card img {
+    height: 200px;
+    width: 250px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(196, 20, 20, 0.1);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para os títulos dos cartões de voo e destino */
-.flight-card h3, .destination-card h3 {
+.flight-card h3,
+.destination-card h3 {
     margin: 0;
     color: #333;
-    font-size: 24px;
+    font-size: 22px;
 }
 
-/* Estilo para os detalhes dos cartões de voo e destino */
-.flight-card p, .destination-card p {
+.flight-card p,
+.destination-card p {
     margin: 10px 0;
-    color: #4e2222; /* Alterei a cor do texto */
-    font-size: 16px;
+    color: #000000;
+    font-size: 22px;
 }
 
-/* Estilo para os botões dos cartões de voo e destino */
-.flight-card button, .destination-card button {
+.flight-card button,
+.destination-card button {
     background-color: #007bff;
-    color: #ffffff; /* Alterei a cor do texto */
+    color: #ffffff;
     border: none;
     padding: 12px 24px;
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
-.flight-card button:hover, .destination-card button:hover {
-    background-color: #007bff;
+.flight-card button:hover,
+.destination-card button:hover {
+    background-color: #0056b3;
 }
-.flight-card:last-child, .destination-card:last-child {
-    margin-right: 0; /* Remove o espaçamento à direita do último cartão */
+
+/* Container de cartões */
+.flight-card-container,
+.destination-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha */
+    justify-content: center;
 }
+
+/* Rodapé */
 footer p {
     background-color: #007bff;
-    font-size: large;
-    height: 25px;
+    font-size: 24px;
+    height: 40px;
     color: white;
     display: flex;
-    align-items: center; /* Centralizar verticalmente */
-    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center;
+    justify-content: center;
+    margin-top: 65px;
+    border: solid #ffc107;
+    border-width: 0 5px 8px;
 }
+
+/* Overlay e caixa de diálogo */
 .overlay {
     position: fixed;
     top: 0;
@@ -211,9 +226,9 @@ footer p {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 300px; /* Definindo uma largura máxima */
-    width: 90%; /* Adaptação responsiva */
-    position: relative; /* Adicionado para posicionamento absoluto */
+    max-width: 300px;
+    width: 90%;
+    position: relative;
 }
 
 .close-btn {
@@ -222,14 +237,52 @@ footer p {
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    border: 2px solid blue; /* Adiciona uma borda azul */
-    border-radius: 50%; /* Deixa o X com bordas redondas */
-    padding: 5px; /* Espaçamento interno */
-    background-color: white; /* Fundo branco */
-    color: blue; /* Cor do texto azul */
+    border: 2px solid blue;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+    color: blue;
 }
 
 .close-btn:hover {
-    background-color: blue; /* Altera a cor de fundo ao passar o mouse */
-    color: white; /* Altera a cor do texto ao passar o mouse */
+    background-color: blue;
+    color: white;
+}
+
+/* Consulta de mídia para telas menores */
+@media screen and (max-width: 768px) {
+    /* Ajuste de layout para telas menores */
+    .flight-card,
+    .destination-card {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Ajuste de margem para botões */
+    button,
+    .flight-card button,
+    .destination-card button {
+        margin: 10px 0;
+    }
+    
+    /* Ajuste de margem para o rodapé */
+    footer p {
+        margin-top: 20px;
+    }
+    
+    /* Ajuste de margem para o cabeçalho */
+    header h2 {
+        font-size: 40px;
+    }
+    
+    header h1 {
+        font-size: 25px;
+    }
+    
+    /* Ajuste de margem para o formulário de pesquisa */
+    form.search-form {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

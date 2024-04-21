@@ -12,23 +12,24 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-size: cover; /* Para cobrir todo o tamanho do body */
-    background-repeat: no-repeat; /* Para evitar a repetição da imagem */
-    background-position: center; /* Para centralizar a imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Estilo do menu de navegação */
 .navbar-options {
     background-color: #f8f9fa;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     border: 4px solid #ffc107;
-    width: 1090px; /* Defina a largura desejada aqui */
-    margin: 0 auto; 
-    font-size: 25px;
+    width: 650px;
+    margin: 0 auto;
+    font-size: 20px;
 }
 
 .navbar-brand,
@@ -37,7 +38,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     position: relative;
-    padding-right: 100px;
+    padding-right: 20px;
 }
 
 .navbar-brand::after,
@@ -45,11 +46,11 @@ body {
     content: ''; 
     position: absolute;
     top: 20px;
-    right: 0; /* Corrigido de 00 para 0 */
+    right: -10px;
     transform: translateY(-50%);
     height: 79px;
     width: 5px;
-    background-color: #ffc107; /* Cor da barra */
+    background-color: #ffc107;
 }
 
 .container {
@@ -57,36 +58,6 @@ body {
     margin: 0 auto;
 }
 
-.barra-vertical {
-    padding: 2px;
-    position: relative;
-    width: 5px;
-    height: 80px; /* Altura da barra */
-    background-color: #ffc107; /* Cor da barra */
-    margin: 0 10px; /* Espaçamento horizontal */
-    left: 452px;
-}
-
-/* Estilo do botão "Confirmar" */
-.navbar-options button {
-    background-color: #008cff;
-    color: #fff;
-    border: none;
-    border-radius: 0px 16px 16px 0px;
-    transition: background-color 0.3s ease;
-    height: 80px;
-    width: 250px;
-    font-size: 30px;
-    margin-left: 100px;
-}
-
-
-
-.navbar-options button:hover {
-    background-color: #00c3ff;
-}
-
-/* Estilo do Header */
 header {
     background-color: #007bff;
     padding: 10px;
@@ -94,6 +65,7 @@ header {
     color: #ffffff;
     border-radius: 0px 0px 20px 20px;
     box-shadow: 0px 4px 5px#000000;
+    border: 3px solid #ffc107;
 }
 
 header h1 {
@@ -136,9 +108,9 @@ label {
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
-    color: #1b1b1b;
-    display: block;
+    color: #000000;
     margin-bottom: 9px;
+    margin-left: 20px;
 }
 
 /* Estilo do campo de data */
@@ -148,39 +120,13 @@ input[type="date"] {
     padding: 5px;
     border-radius: 5px;
     border: 2px solid #ffbf00;
-    width: 100%;
-    max-width: 140px; /* Limita a largura para evitar que o campo fique muito largo */ /* Garante que o padding não aumente a largura total */
+    max-width: 100px;
     transition: border-color 0.3s ease;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     outline: none;
+    margin-left: 20px;
 }
-
-/* Estilo do campo de data quando em foco */
-input[type="date"]:focus {
-    border-color: #ff8c00;
-}
-
-/* Estilo do ícone do campo de data */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(50%);
-}
-
-/* Estilo do ícone personalizado (opcional) */
-.input-date-icon {
-    position: relative;
-}
-
-.input-date-icon::before {
-    content: '\1F4C5'; /* Unicode do ícone do calendário */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 25px;
-    color: #ffc107;
-}
-
 
 .container .slide .item {
     width: 180px;
@@ -194,37 +140,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-size: cover;
     display: inline-block;
     transition: 0.5s;
-  }
-  
-  .slide .item:nth-child(1),
-  .slide .item:nth-child(2) {
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
     top: 450px;
     left: 500px;
     transform: translate(0, 0);
     border-radius: 10px;
     width: 1000px;
     height: 500px;
-  }
-  
-  
-  .slide .item:nth-child(3) {
+}
+
+
+.slide .item:nth-child(3) {
     left: 50%;
-  }
-  
-  .slide .item:nth-child(4) {
+}
+
+.slide .item:nth-child(4) {
     left: calc(50% + 210px);
-  }
-  
-  .slide .item:nth-child(5) {
+}
+
+.slide .item:nth-child(5) {
     left: calc(50% + 430px);
-  }
-  
-  .slide .item:nth-child(n + 6) {
+}
+
+.slide .item:nth-child(n + 6) {
     left: calc(50% + 650px);
     opacity: 0;
-  }
-  
-  .item .content {
+}
+
+.item .content {
     position: absolute;
     top: 210px;
     left: 80px;
@@ -234,38 +180,35 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: translate(0, -50%);
     font-family: system-ui;
     display: none;
-  }
-  
-  
-  .slide .item:nth-child(2) .content {
+}
+
+.slide .item:nth-child(2) .content {
     display: block;
-  }
-  
-  .content .name {
+}
+
+.content .name {
     font-size: 40px;
     text-transform: uppercase;
     font-weight: bold;
     opacity: 0;
     animation: animate 1s ease-in-out 1 forwards;
-  }
-  
-  .content .des {
+}
+
+.content .des {
     margin-top: 10px;
     margin-bottom: 20px;
     opacity: 0;
     animation: animate 1s ease-in-out 0.3s 1 forwards;
-  }
-  
-  .content button-img {
+}
+
+.content button-img {
     padding: 10px 20px;
     border: none;
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
 
-  }
-  
-  
-  @keyframes animate {
+@keyframes animate {
     from {
       opacity: 0;
       transform: translate(0, 100px);
@@ -277,14 +220,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       transform: translate(0);
       filter: blur(0);
     }
-  }
-  .button-img {
+}
+
+.button-img {
     position: relative;
     top: 530px;
     left: 830px;
-  }
-  
-  .button-img button {
+}
+
+.button-img button {
     background-color: #006eff;
     color: #fff;
     border: none;
@@ -294,24 +238,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .button-img button:hover {
+}
+
+.button-img button:hover {
     background-color: #0056b3;
-  }
-  
-  .button-img button:focus {
+}
+
+.button-img button:focus {
     outline: none;
-  }
-  
-  .button-img button.prev {
+}
+
+.button-img button.prev {
     margin-right: 10px;
-  }
-  
-  .button-img button.next {
+}
+
+.button-img button.next {
     margin-left: 10px;
-  }
-  .button-img h1{
+}
+
+.button-img h1 {
     position:absolute;
     top: -480px;
     color: #ffffff;
@@ -320,24 +265,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: #006eff;
     border-radius: 5px;
     height: 40px;
-    box-shadow: 0 5px 4px black;
-  }
-  .hover-do-site {
+    box-shadow: 0 5px 4px black;   
+}
+
+.hover-do-site {
     margin-top: 600px;
     background-color: #006eff;
     width: 1950px;
     height: 52px;
     border-radius: 5px;
     box-shadow: 0 5px 8px black;
-  }
-  .hover-do-site p {
+    border: 3px solid #ffc107;
+}
+
+.hover-do-site p {
     font-size: 25px;
     color: white;
     position: relative;
-    left: 670px;
+    left: 760px;
     top: 10px;
-  }
-  .botao-de-Paginas {
+}
+
+.botao-de-Paginas {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -357,6 +306,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .botao-de-Paginas button:hover {
     background-color: #0056b3;
 }
+
 /* Estilo dos botões "Mais sobre" */
 .button-mais-sobre {
     background-color: #007bff;
@@ -367,14 +317,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .button-mais-sobre:hover {
+}
+
+.button-mais-sobre:hover {
     background-color: #0056b3;
-  }
-  
-  /* Estilo do modal */
-  .modal {
+}
+
+/* Estilo do modal */
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -383,31 +333,152 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    width: 50%;
-  }
-  
-  .close {
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
     color: #aaa;
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
-  }
-  
+}
 
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
 
+/* Estilo das imagens dentro do modal */
+.modal-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Estilo dos botões de navegação das imagens */
+.prev-img,
+.next-img {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.prev-img:hover,
+.next-img:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-img {
+    left: 10px;
+}
+
+.next-img {
+    right: 10px;
+}
+
+/* Estilo para esconder a barra de rolagem horizontal */
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .navbar-options {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-brand,
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+    input[type="date"] {
+        max-width: none;
+    }
+
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2) {
+        top: auto;
+        left: auto;
+        transform: none;
+        width: auto;
+        height: auto;
+    }
+
+    .button-img {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .button-img button {
+        margin: 0 5px;
+    }
+
+    .button-img h1 {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .hover-do-site {
+        margin-top: 20px;
+        width: auto;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .hover-do-site p {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .botao-de-Paginas {
+        flex-wrap: wrap;
+    }
+
+    .botao-de-Paginas button {
+        margin: 10px 5px;
+    }
+
+    .button-mais-sobre {
+        margin: 10px 5px;
+    }
+
+    .container .slide .item {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .container .slide .item:nth-child(n + 6) {
+        display: none;
+    }
+}
