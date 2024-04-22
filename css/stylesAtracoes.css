@@ -1,5 +1,50 @@
 @import url('https://use.fontawesome.com/releases/v6.4.2/css/all.css');
 
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    body,
+    .container,
+    .slide,
+    .item,
+    .content,
+    .button-img,
+    .modal-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    body {
+        padding: 20px; /* Adiciona um pouco de espaço entre os elementos */
+    }
+
+    .item {
+        width: 100%; /* Define a largura dos itens como 100% */
+        max-width: 400px; /* Define a largura máxima dos itens */
+        margin-bottom: 20px; /* Adiciona um espaço entre os itens */
+    }
+
+    .button-img {
+        margin-top: 20px;
+    }
+
+    .button-img button {
+        margin: 0 5px; /* Adiciona um espaço entre os botões */
+    }
+
+    .modal-content {
+        width: 90%; /* Ajusta a largura do modal */
+        max-width: 400px; /* Define a largura máxima do modal */
+        margin: 20px auto; /* Centraliza o modal na tela */
+    }
+
+    .modal-images img {
+        width: 100%; /* Garante que as imagens do modal se ajustem corretamente */
+    }
+}
+
 /* Reset de estilos */
 * {
     margin: 0;
@@ -405,80 +450,16 @@ input[type="date"] {
 .modal-content::-webkit-scrollbar {
     display: none;
 }
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .navbar-options {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar-brand,
-    .nav-link {
-        margin-bottom: 10px;
-    }
-
-    input[type="date"] {
-        max-width: none;
-    }
-
-    .slide .item:nth-child(1),
-    .slide .item:nth-child(2) {
-        top: auto;
-        left: auto;
-        transform: none;
-        width: auto;
-        height: auto;
-    }
-
-    .button-img {
-        position: static;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .button-img button {
-        margin: 0 5px;
-    }
-
-    .button-img h1 {
-        position: static;
-        margin-top: 20px;
-    }
-
-    .hover-do-site {
-        margin-top: 20px;
-        width: auto;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .hover-do-site p {
-        font-size: 16px;
-        margin: 0 10px;
-    }
-
-    .botao-de-Paginas {
-        flex-wrap: wrap;
-    }
-
-    .botao-de-Paginas button {
-        margin: 10px 5px;
-    }
-
-    .button-mais-sobre {
-        margin: 10px 5px;
-    }
-
-    .container .slide .item {
-        width: 90%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .container .slide .item:nth-child(n + 6) {
-        display: none;
-    }
-}
+#destino {
+ font-weight: bold;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  #destino option {
+    font-size: 16px;
+  }

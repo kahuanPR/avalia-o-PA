@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atrações</title>
-    <link rel="stylesheet" href="/css/stylesAtracoes.css"> <!-- Arquivo CSS para estilos -->
+    <link rel="stylesheet" href="../css/stylesAtracoes.css"> <!-- Arquivo CSS para estilos -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.css" rel="stylesheet">
 </head>
 <body>
@@ -13,15 +13,22 @@
     <div class="container">
         <h1>Atrações</h1>
     <nav class="botao-de-Paginas">
-        <a href="/html/index.html"><button>Hospedagem</button></a>
-        <a href="/html/Voos.html"><button>Voos</button></a>
-        <a href="/html/Atracoes.html"><button>Atrações</button></a>
+        <a href="../html/index.html"><button>Hospedagem</button></a>
+        <a href="../html/Voos.html"><button>Voos</button></a>
+        <a href="../html/Atracoes.html"><button>Atrações</button></a>
     </nav>
         <h1>Atrações, atividades e experiências.</h1>
         <p>novas atrações e experiências que combinam com o que você gosta e seu jeito de viajar.</p>
     </div>
     <nav class="navbar-options">
-        <a class="navbar-brand" href="#">Para onde você vai?</a>
+      <select id="destino">
+        <option value="">Para onde você vai?</option>
+        <option value="maringa">Maringá</option>
+        <option value="londrina">Londrina</option>
+        <option value="curitiba">Curitiba</option>
+        <option value="foz-de-iguacu">Foz de Iguaçu</option>
+        <option value="ilha-do-mel">Ilha do Mel</option>
+    </select>
         <div class="barra-vertical"></div>
         <label for="date">Selecione a data:</label>
         <input type="date" id="date">
@@ -80,7 +87,7 @@
             <span class="close">&times;</span>
             <h2 id="modal-title"></h2>
             <div id="modal-images" class="modal-images">
-                <!-- Aqui serão adicionadas as imagens dinamicamente -->
+                
             </div>
             <button class="prev-img">&lt;</button>
             <button class="next-img">&gt;</button>
@@ -96,7 +103,7 @@
         <p>&copy; Melhores atrações das 5 regiões</p>
     </div>
 </footer>
-<script src="/script/scriptAtracoes.js"></script>
+<script src="../script/scriptAtracoes.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.js"></script>
 </body>
 </html>

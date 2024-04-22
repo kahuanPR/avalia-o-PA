@@ -143,4 +143,40 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+// Seleciona o elemento <select> de destino
+var destinoSelect = document.getElementById('destino');
+
+// Adiciona um evento de mudança ao elemento <select>
+destinoSelect.addEventListener('change', function() {
+    // Obtém o valor selecionado
+    var selectedDestination = destinoSelect.value;
+    
+    // Verifica qual região foi selecionada e direciona o usuário para os botões "Mais sobre" correspondentes
+    switch(selectedDestination) {
+        case 'maringa':
+            // Redireciona para os botões "Mais sobre" de Maringá
+            window.location.href = "#maringa";
+            break;
+        case 'londrina':
+            // Redireciona para os botões "Mais sobre" de Londrina
+            window.location.href = "#londrina";
+            break;
+        case 'curitiba':
+            // Redireciona para os botões "Mais sobre" de Curitiba
+            window.location.href = "#curitiba";
+            break;
+        case 'foz-de-iguacu':
+            // Redireciona para os botões "Mais sobre" de Foz de Iguaçu
+            window.location.href = "#foz-de-iguacu";
+            break;
+        case 'ilha-do-mel':
+            // Redireciona para os botões "Mais sobre" de Ilha do Mel
+            window.location.href = "#ilha-do-mel";
+            break;
+        default:
+            // Ação padrão caso nenhuma opção seja selecionada
+            alert("Por favor, selecione um destino.");
+    }
+});
+
 

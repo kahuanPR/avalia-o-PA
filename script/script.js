@@ -215,10 +215,10 @@
     var hotelsData = {
         "Maringá": [
             { name: "Hotel Thomasi Expres", price: "R$229", location: "<a href='https://maps.app.goo.gl/mojqYsuMMyVYhJgd7' target='_blank'>Hotel Thomasi Expres, Maringá, Paraná</a>" },
-            { name: "Hotel GAPH Maringá - Econômico Mini Resort", price: "$", location: "<a href='https://maps.app.goo.gl/WVyW92SXDSiWqYAcA' target='_blank'>Hotel GAPH Maringá - Econômico Mini Resort, Maringá, Paraná</a>" },
-            { name: "Hotel Avalon Maringá Econômico", price: "$90", location: "<a href='https://maps.app.goo.gl/FpbaPnWPJT5mFkj77' target='_blank'>Hotel Avalon Maringá Econômico, Maringá, Paraná</a>" },
-            { name: "Hotel Deville Business Maringá", price: "$150", location: "<a href='https://maps.app.goo.gl/846bNyhS2ME9pHwo7' target='_blank'>Hotel Deville Business, Maringá, Paraná</a>" },
-            { name: "Maringá Aeroporto Hotel", price: "$110", location: "<a href='https://maps.app.goo.gl/axFCd5rMd24GKxuH9' target='_blank'>Maringá Aeroporto Hotel, Maringá, Paraná</a>" }
+            { name: "Hotel GAPH Maringá - Econômico Mini Resort", price: "$250", location: "<a href='https://maps.app.goo.gl/WVyW92SXDSiWqYAcA' target='_blank'>Hotel GAPH Maringá - Econômico Mini Resort, Maringá, Paraná</a>" },
+            { name: "Hotel Avalon Maringá Econômico", price: "$190", location: "<a href='https://maps.app.goo.gl/FpbaPnWPJT5mFkj77' target='_blank'>Hotel Avalon Maringá Econômico, Maringá, Paraná</a>" },
+            { name: "Hotel Deville Business Maringá", price: "$250", location: "<a href='https://maps.app.goo.gl/846bNyhS2ME9pHwo7' target='_blank'>Hotel Deville Business, Maringá, Paraná</a>" },
+            { name: "Maringá Aeroporto Hotel", price: "$320", location: "<a href='https://maps.app.goo.gl/axFCd5rMd24GKxuH9' target='_blank'>Maringá Aeroporto Hotel, Maringá, Paraná</a>" }
         ],
         "Curitiba": [
             { name: "Nomaa HOTEL", price: "R$1.304", location: "<a href='https://maps.app.goo.gl/EwS2mdQXyP5ENJYX6' target='_blank'>Nomaa HOTEL, Curitiba</a>" },
@@ -285,3 +285,20 @@
         var modalContent = document.querySelector(".modal-content");
         modalContent.innerHTML = "";
     }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Ouvinte de evento de clique para cada uma das opções "Para onde você vai?"
+        var destinationLinks = document.querySelectorAll('.destination-suggestion');
+        destinationLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                // Impede o comportamento padrão do link (evita a mudança de página)
+                event.preventDefault();
+                
+                // Obtém o destino a partir do texto do link clicado
+                var destination = this.textContent;
+                
+                // Chama a função para mostrar os hotéis correspondentes ao destino
+                showHotels(destination);
+            });
+        });
+    });
+    

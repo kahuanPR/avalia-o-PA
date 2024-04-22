@@ -202,7 +202,6 @@ footer p {
     align-items: center;
     justify-content: center;
     margin-top: 65px;
-    border: solid #ffc107;
     border-width: 0 5px 8px;
 }
 
@@ -285,4 +284,14 @@ footer p {
         margin-left: 0;
         margin-right: 0;
     }
+/* Estilos para inputs específicos */
+select {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    width: 100%; /* Largura de 100% para se adaptar a qualquer tela */
+    max-width: 300px; /* Definir uma largura máxima para evitar que o select se estenda demais */
+}
+
 }
